@@ -1,0 +1,74 @@
+:root {
+    --main-color: #4CAF50;
+    --box-size: 150px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.animated-box {
+    width: var(--box-size);
+    height: var(--box-size);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.animated-box:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.animate {
+    animation: rainbowPulse 2s ease-in-out;
+}
+
+@keyframes rainbowPulse {
+    0% { background-color: var(--main-color); }
+    25% { transform: scale(1.2); }
+    50% { background-color: #ff5722; }
+    75% { transform: scale(0.8); }
+    100% { background-color: var(--main-color); }
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.color-picker {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-option.selected {
+    border-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
